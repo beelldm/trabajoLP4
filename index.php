@@ -15,34 +15,30 @@ and open the template in the editor.
         include 'conexion.php';
         
         function verificar_login($user,$password,&$result) {
-        $sql = "SELECT * FROM usuarios WHERE usuario = '$user' and password = '$password'";
+        $sql = "SELECT * FROM user WHERE usuario = '$user' and password = '$password'";
         $rec = mysql_query($sql);
         $count = 0;
-
     while($row = mysql_fetch_object($rec))
     {
         $count++;
         $result = $row;
     }
-
     if($count == 1)
     {
         return 1;
     }
-
     else
     {
         return 0;
     }
 }
-
 if(!isset($_SESSION['userid']))
 {
     if(isset($_POST['login']))
     {
         if(verificar_login($_POST['user'],$_POST['password'],$result) == 1)
         {
-            $_SESSION['userid'] = $result->idusuario;
+            $_SESSION['userid'] = $result->idcodigo;
             header("location:index.php");
         }
         else
@@ -101,6 +97,7 @@ form.login div input[type="submit"] {
 <?php
 } else {
 	echo 'Su usuario ingreso correctamente.';
+        echo 'Holas compañeros de lp4';
 	echo '<a href="logout.php">Logout</a>';
 }
 ?>
