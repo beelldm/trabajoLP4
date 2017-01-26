@@ -98,6 +98,7 @@ form.login div input[type="submit"] {
 } else {
 	echo 'Su usuario ingreso correctamente.';
         echo 'Holas compañeros de lp4';
+        
 	echo '<a href="logout.php">Logout</a>';
 }
 ?>
