@@ -96,10 +96,9 @@ form.login div input[type="submit"] {
 </form>
 <?php
 } else {
-	echo 'Su usuario ingreso correctamente.';
-        echo 'Holas compañeros de lp4';
-        
-	echo '<a href="logout.php">Logout</a>';
+	echo 'SU USUARIO INGRESO CORRECTAMENTE'.'<br>';
+        echo '<br>';
+	echo '<a href="main/index1.php">Ver lista de alumnos</a>';
 }
 ?>
         

@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 define('DB_SERVER','LOCALHOST');
-define('DB_NAME','usuarios');
+define('DB_NAME','mvc');
 define('DB_USER','root');
 define('DB_PASS','');
 $con = mysql_connect(DB_SERVER, DB_USER, DB_PASS);
