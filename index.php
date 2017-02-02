@@ -43,7 +43,7 @@ if(!isset($_SESSION['userid']))
         }
         else
         {
-            echo '<div class="error">Su usuario es incorrecto, intente nuevamente.</div>';
+            echo '<div class="error">edino gay, intente nuevamente.</div>';
         }
     }
 ?>
