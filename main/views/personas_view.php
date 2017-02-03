@@ -31,6 +31,30 @@
        }
                 echo "</tbody></table>";
     
+      function insertarpersonas($codigo,$nombre,$apellido){
+      mysql_query("INSERT INTO personas VALUES('$codigo','$nombre','$apellido','1')");
+      if(mysql_affected_rows() > 0) return true;
+      else return false;
+    }
+
+      function modificarpersonas($codigo,$nombre,$apellido){
+      mysql_query("UPDATE personas SET nombre='$nombre', apellido='$apellido'
+                   WHERE codigo = '$codigo'");
+      if(mysql_affected_rows() > 0) return true;
+      else return false;
+    }
+
+      function eliminarpersonas($codigo){
+      mysql_query("UPDATE personas SET estado=0
+                   WHERE codigo = '$codigo'");
+      if(mysql_affected_rows() > 0) return true;
+      else return false;
+    }
+                
+                
+                
+                
+                
        ?>
                     
         <?php
