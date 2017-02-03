@@ -2,11 +2,11 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <title>Personas</title>
+        <title>NEW INSERT</title>
     </head>
     <body>
         <?php
-            print "------------ LISTA DE ALUMNOS ------------".'<br>';
+            print "------------ AGREGAR NUEVO ------------".'<br>';
             foreach ($datos as $dato) {
                 echo '<br>';
                 echo "<table>
@@ -25,25 +25,22 @@
                 <td><input size=25 id='codigo"."'value='".$dato['codigo']."' disabled></td>
                 <td><input size=25 id='nombre"."'value='".$dato['nombre']."' ></td>
                 <td><input size=25 id='apellido"."'value='".$dato['apellido']."' ></td>
-                <td><button class='btnModificar' id='"."'>Modificar</button></td>
-                <td><button class='btnEliminar' id='"."'>Eliminar</button></td>
-                
+                <td><button class='btnInsert' id='"."'>Guardar</button></td>
                </tr></div>";
          
        }
-                echo "</tbody></table>";
-                
-        echo "<div class='contenido'><tr>
-                <td><button class='btnInsertar' id='"."'>New</button></td>
-         </tr></div>";        
-    
-       ?>
-                    
-        <?php
-        echo '<br>';
-        echo '<a href="../logout.php">CERRAR SESION</a><br>';
-        echo '<br>';
-        ?>
-                    
+       echo "</tbody></table>";
+       
+        $link = Conexion();
+        $q = "INSERT INTO personas (codigo, nombre, apellido) VALUES ('$dato','$dato','$dato')";
+        $rs = mysql_query($q);
+        if($rs == false) {
+            echo '<p>Error al insertar los campos en la tabla.</p>';
+        }else{
+            echo '<p>Los datos se han insertado correctamente.</p>';
+        }
+        Desconectar($link);
+       
+       ?>         
     </body>
 </html>
