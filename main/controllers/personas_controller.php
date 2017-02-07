@@ -1,16 +1,13 @@
 <?php
-//Llamada al modelo
-require_once("models/personas_model.php");
-$per=new personas_model();
-$datos=$per->get_personas();
- 
-//Llamada a la vista
+
 require_once("views/personas_view.php");
 
-  $con = new mpersonas;
+require_once("models/personas_model.php");
+$con = new personas_model();
 
-  switch ($_POST['flag']) {
-    case 'insertar':
+ if (isset($_POST['var'])){
+  switch ($_POST['var']){
+    case 'Insertar':
         if($con -> insertarpersonas($_POST["codigo"],$_POST["nombre"],$_POST["apellido"]) == true){
           echo "Se insertó correctamente";
         }
@@ -39,4 +36,8 @@ require_once("views/personas_view.php");
         echo "¿Cómo llegaste aquí?";
       break;
   }
+}
+else{
+  echo "no existe la condicion";
+}
 ?>
